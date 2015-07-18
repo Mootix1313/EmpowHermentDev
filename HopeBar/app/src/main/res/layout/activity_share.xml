@@ -25,5 +25,17 @@
         android:id="@+id/pic3"
         android:scaleType="fitCenter"
         android:src="@drawable/emsquared16"/>
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/pic4"
+        android:scaleType="fitCenter"
+        android:src="@drawable/emsquared2"/>
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/pic5"
+        android:scaleType="fitCenter"
+        android:src="@drawable/emsquared3"/>
 
 </GridLayout>

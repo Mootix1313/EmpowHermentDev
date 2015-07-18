@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -40,18 +42,17 @@ public class Purchase extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //Remove notification bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_purchase);
         tb = getIntent().getIntExtra("total_bars",0);
         float cost = tb*75/30;
         tb = tb/30;
-        TextView tboxes = (TextView)findViewById(R.id.tboxes);
-        tboxes.setText(String.valueOf(tb));
-       // shares = intent.getFloatExtra("Stock_shares",-1);
-        TextView tbars = (TextView)findViewById(R.id.tbars);
-        tbars.setText(""+tb*30+"");
-        TextView tcost = (TextView)findViewById(R.id.tcost);
-        tcost.setText("$ "+cost+"");
-
 
         Button pay = (Button) findViewById(R.id.pay);
         pay.setOnClickListener(Purchase.this);

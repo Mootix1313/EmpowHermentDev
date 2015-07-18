@@ -19,6 +19,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Gallery;
@@ -41,6 +43,13 @@ public class Share extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //Remove notification bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_share);
 
         ImageButton b1 = (ImageButton) findViewById(R.id.pic1);
@@ -63,7 +72,7 @@ public class Share extends Activity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared1");
+                imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared8");
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
@@ -78,7 +87,37 @@ public class Share extends Activity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared1");
+                imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared16");
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
+                shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+                shareIntent.setType("*/*");
+                startActivity(Intent.createChooser(shareIntent, "Share!"));
+            }
+        });
+
+        ImageButton b4 = (ImageButton) findViewById(R.id.pic4);
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared2");
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
+                shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+                shareIntent.setType("*/*");
+                startActivity(Intent.createChooser(shareIntent, "Share!"));
+            }
+        });
+
+        ImageButton b5 = (ImageButton) findViewById(R.id.pic5);
+
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared3");
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
