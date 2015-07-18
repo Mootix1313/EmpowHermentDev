@@ -7,44 +7,46 @@
     android:orientation="vertical"
     android:dividerPadding="@dimen/activity_vertical_margin">
 
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="About"
-        android:id="@+id/about" />
+        android:id="@+id/about"
+        android:src="@drawable/about"
+        android:onClick=""
+        android:layout_weight="1" />
 
-    <Button
-        android:layout_width="351dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
-        android:clickable="true"
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
         android:text="The Bar"
-        android:id="@+id/thebar" />
+        android:id="@+id/thebar"
+        android:src="@drawable/thebar"
+        android:layout_weight="1" />
 
-    <Button
-        android:layout_width="351dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Impact"
-        android:id="@+id/impact" />
+        android:id="@+id/impact"
+        android:src="@drawable/impact"
+        android:layout_weight="1" />
 
-    <Button
-        android:layout_width="353dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Buy"
-        android:id="@+id/buy" />
+        android:id="@+id/buy"
+        android:src="@drawable/buy"
+        android:layout_weight="1" />
 
-    <Button
-        android:layout_width="351dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Share"
-        android:id="@+id/share" />
+        android:id="@+id/share"
+        android:src="@drawable/share"
+        android:layout_weight="1" />
 
-    <Button
-        android:layout_width="351dp"
-        android:layout_height="wrap_content"
-        android:paddingBottom="50dp"/>
 </LinearLayout>

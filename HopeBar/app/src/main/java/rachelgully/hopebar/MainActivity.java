@@ -4,13 +4,26 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
+    private ImageButton b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//
+//        b = (ImageButton) findViewById(R.id.about);
+//        b.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast t = Toast.makeText(getApplicationContext(), b.getHeight() + " " + b.getWidth(), Toast.LENGTH_LONG);
+//                t.show();
+//            }
+//        });
     }
 
     @Override
