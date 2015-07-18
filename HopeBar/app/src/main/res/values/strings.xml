@@ -14,8 +14,16 @@
     <string name="title_activity_share">Share</string>
     <string name="pay">Pay</string>
     <string name="number">Number of Boxes</string>
-    <string name="cost">$75/box</string>
+    <string name="cost">$75</string>
+    <string name ="boxbars">Number of bars</string>
+    <string name = "nbars">30 per box</string>
     <string name="total">Total number of Bars</string>
     <string name="title_activity_main_screen">MainScreen</string>
-
+    <string name="title_activity_purchase">Order Confirmation</string>
+    <string name ="order">Order Now</string>
+    <string name ="price">Price per box</string>
+    <string name = "confirm">Confirm your order</string>
+    <string name = "tboxes">Number of Boxes</string>
+    <string name = "happy">Complimentary : A hungry kid\'s smile !! :) :) :)</string>
+    <string name = "tcost">Total amount payable</string>
 </resources>

@@ -1,9 +1,38 @@
 package rachelgully.hopebar;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Activity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.TypedArray;
+
+import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
+
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Gallery;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import static java.lang.System.currentTimeMillis;
+import android.os.Bundle;
 
 public class Share extends Activity {
 

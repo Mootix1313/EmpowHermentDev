@@ -58,7 +58,7 @@
             android:configChanges="keyboardHidden|orientation" />
         <activity android:name="io.card.payment.DataEntryActivity" />
         <activity
-            android:name=".MainScreen" >
+            android:name=".MainScreen">
             <intent-filter>
                 <action android:name="com.tutorial.CLEARSCREEN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
