@@ -1,50 +1,73 @@
 package rachelgully.hopebar;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    private ImageButton b;
+    private ImageButton about;
+    private ImageButton thebar;
+    private ImageButton impact;
+    private ImageButton buy;
+    private ImageButton share;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//
-//        b = (ImageButton) findViewById(R.id.about);
-//        b.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast t = Toast.makeText(getApplicationContext(), b.getHeight() + " " + b.getWidth(), Toast.LENGTH_LONG);
-//                t.show();
-//            }
-//        });
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        /*open about*/
+        about = (ImageButton) findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, About.class);
+                startActivity(i);
+            }
+        });
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        /*open thebar*/
+        thebar = (ImageButton) findViewById(R.id.thebar);
+        thebar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, TheBar.class);
+                startActivity(i);
+            }
+        });
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        /*open impact*/
+        impact = (ImageButton) findViewById(R.id.impact);
+        impact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Impact.class);
+                startActivity(i);
+            }
+        });
 
-        return super.onOptionsItemSelected(item);
+        /*open buy*/
+        buy = (ImageButton) findViewById(R.id.buy);
+        buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Buy.class);
+                startActivity(i);
+            }
+        });
+
+        /*open share*/
+        share = (ImageButton) findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Share.class);
+                startActivity(i);
+            }
+        });
     }
 }

@@ -12,9 +12,10 @@
         android:layout_height="match_parent"
         android:text="About"
         android:id="@+id/about"
-        android:src="@drawable/about"
-        android:onClick=""
-        android:layout_weight="1" />
+        android:src="@drawable/barabout"
+        android:onClick="@string/title_activity_about"
+        android:layout_weight="1"
+        android:clickable="true" />
 
     <ImageButton
         android:layout_width="match_parent"
@@ -22,7 +23,7 @@
         android:clickable="false"
         android:text="The Bar"
         android:id="@+id/thebar"
-        android:src="@drawable/thebar"
+        android:src="@drawable/barabout"
         android:layout_weight="1" />
 
     <ImageButton
@@ -30,7 +31,7 @@
         android:layout_height="match_parent"
         android:text="Impact"
         android:id="@+id/impact"
-        android:src="@drawable/impact"
+        android:src="@drawable/barabout"
         android:layout_weight="1" />
 
     <ImageButton
@@ -38,7 +39,7 @@
         android:layout_height="match_parent"
         android:text="Buy"
         android:id="@+id/buy"
-        android:src="@drawable/buy"
+        android:src="@drawable/barabout"
         android:layout_weight="1" />
 
     <ImageButton
@@ -46,7 +47,7 @@
         android:layout_height="match_parent"
         android:text="Share"
         android:id="@+id/share"
-        android:src="@drawable/share"
+        android:src="@drawable/barabout"
         android:layout_weight="1" />
 
 </LinearLayout>

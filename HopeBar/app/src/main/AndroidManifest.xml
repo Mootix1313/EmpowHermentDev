@@ -16,6 +16,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".About"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rachelgully.hopebar.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TheBar"
+            android:label="@string/title_activity_the_bar" >
+        </activity>
+        <activity
+            android:name=".Impact"
+            android:label="@string/title_activity_impact" >
+        </activity>
+        <activity
+            android:name=".Bar"
+            android:label="@string/title_activity_bar" >
+        </activity>
+        <activity
+            android:name=".Buy"
+            android:label="@string/title_activity_buy" >
+        </activity>
+        <activity
+            android:name=".Share"
+            android:label="@string/title_activity_share" >
+        </activity>
     </application>
 
 </manifest>
