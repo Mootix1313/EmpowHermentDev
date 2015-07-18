@@ -16,5 +16,6 @@
     <string name="number">Number of Boxes</string>
     <string name="cost">$75/box</string>
     <string name="total">Total number of Bars</string>
+    <string name="title_activity_main_screen">MainScreen</string>
 
 </resources>
