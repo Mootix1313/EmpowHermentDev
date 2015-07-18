@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 
 public class MainScreen extends Activity {
 
@@ -17,6 +19,9 @@ public class MainScreen extends Activity {
     private ImageButton impact;
     private ImageButton buy;
     private ImageButton share;
+    private int level;
+    private int hearts;
+    private int boxes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,5 +84,12 @@ public class MainScreen extends Activity {
                 startActivity(i);
             }
         });
+
+//        SharedPreferences.Editor editor = getSharedPreferences("hope_preferences", MODE_PRIVATE).edit();
+//        editor.putInt("level", 1);
+//        editor.putInt("hearts", 0);
+//        editor.putInt("boxes", 0);
+//        editor.commit();
+
     }
 }

@@ -2,6 +2,7 @@ package rachelgully.hopebar;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -62,27 +63,7 @@ public class Purchase extends Activity implements View.OnClickListener {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_purchase, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
     public void onClick (View v) {
         switch (v.getId()) {
             case R.id.pay:
@@ -101,11 +82,22 @@ public class Purchase extends Activity implements View.OnClickListener {
                 PaymentConfirmation confirm = data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
                 if (confirm != null) {
                     try {
+                        int boxes;
+                        SharedPreferences settings = getSharedPreferences("hope_preferences", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = settings.edit();
+
                         System.out.println("Responses" + confirm);
                         Log.i("PayPal Example Payments", confirm.toJSONObject().toString(4));
                         JSONObject obj = new JSONObject(confirm.toJSONObject().toString());
                         String paymentID = obj.getJSONObject("response").getString("id");
                         System.out.println("payment id:==" + paymentID);
+
+                        boxes = settings.getInt("boxes", 0);
+                        boxes += tb;
+                        editor.putInt("boxes", boxes);
+
+                        editor.commit();
+
                     } catch (JSONException e) {
                         Log.e("Payment Demo", "failure occured", e);
                     }
