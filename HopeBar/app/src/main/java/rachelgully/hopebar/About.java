@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 
 public class About extends Activity {
 
@@ -19,6 +20,11 @@ public class About extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+
+        WebView webview = new WebView(this);
+        setContentView(webview);
+        webview.loadUrl("http://hopebar.com/nourish-two/");
     }
 
     @Override

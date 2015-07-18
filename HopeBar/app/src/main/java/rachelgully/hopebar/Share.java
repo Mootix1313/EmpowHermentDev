@@ -32,6 +32,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import static java.lang.System.currentTimeMillis;
@@ -72,7 +73,7 @@ public class Share extends Activity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared8");
+                imageUri = Uri.fromFile(new File("android.resource://rachelgully.hopebar/drawable/emsquared8"));
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
@@ -87,12 +88,12 @@ public class Share extends Activity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared16");
+                imageUri = Uri.fromFile(new File("android.resource://" + getPackageName() + "/drawable/emsquared16"));
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
                 shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
-                shareIntent.setType("*/*");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
+                shareIntent.setType("image/*");
                 startActivity(Intent.createChooser(shareIntent, "Share!"));
             }
         });
@@ -103,11 +104,10 @@ public class Share extends Activity {
             @Override
             public void onClick(View v) {
                 imageUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/emsquared2");
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
-                shareIntent.setType("*/*");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Every bar you buy feeds a hungry child. http://www.hopebar.com");
+                shareIntent.setType("image/jpg");
                 startActivity(Intent.createChooser(shareIntent, "Share!"));
             }
         });

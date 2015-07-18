@@ -71,9 +71,11 @@
     </TableLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/box"/>
+        android:layout_width="268dp"
+        android:layout_height="203dp"
+        android:src="@drawable/hopebox"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2.21" />
 
     <Button
         android:id="@+id/order"
