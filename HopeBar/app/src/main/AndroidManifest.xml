@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="rachelgully.hopebar" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,10 +36,6 @@
             android:label="@string/title_activity_impact" >
         </activity>
         <activity
-            android:name=".Bar"
-            android:label="@string/title_activity_bar" >
-        </activity>
-        <activity
             android:name=".Buy"
             android:label="@string/title_activity_buy" >
         </activity>
@@ -44,6 +43,20 @@
             android:name=".Share"
             android:label="@string/title_activity_share" >
         </activity>
+
+        <!-- PayPal Stuff -->
+        <service android:name="com.paypal.android.sdk.payments.PayPalService"
+            android:exported="false"/>
+        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.LoginActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity"/>
+        <activity android:name="io.card.payment.CardIOActivity"
+            android:configChanges="keyboardHidden|orientation"/>
+        <activity android:name="io.card.payment.DataEntryActivity"/>
     </application>
 
 </manifest>
